@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "990763759796",
+    "firebase_url": "https://yug-policy-reminder-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "yug-policy-reminder",
+    "storage_bucket": "yug-policy-reminder.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:990763759796:android:a4239db11bb039e29bbfe1",
+        "android_client_info": {
+          "package_name": "com.yugfinancial.policyreminder"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoO4bNS2C1_vnMMJa8jCqLfJ1mSSNpfHw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
