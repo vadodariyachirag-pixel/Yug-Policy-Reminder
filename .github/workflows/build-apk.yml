@@ -13,7 +13,7 @@ jobs:
 
       - name: Extract project ZIP
         run: |
-          unzip -o Yug_Policy_Reminder_Tablet_Build.zip -d app-project
+          unzip Yug_Policy_Reminder_Firebase_SYNC_READY.zip
           cd app-project
           find . -maxdepth 3 -type f | head -50
 
