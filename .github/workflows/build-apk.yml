@@ -3,7 +3,7 @@ name: Build Yug Policy Reminder APK
 on:
   workflow_dispatch:
   push:
-    branches: ["main"]
+    branches: [ "main" ]
 
 jobs:
   build:
@@ -13,32 +13,32 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v5
 
-      - name: Extract Firebase project ZIP
+      - name: Extract FIXED project ZIP
         run: |
-          unzip -o Yug_Policy_Reminder_Firebase_SYNC_READY.zip -d .
-          find Yug_Policy_Reminder_Firebase -maxdepth 3 -type f | head -50
+          unzip -o Yug_Policy_Reminder_Firebase_SYNC_FIXED.zip -d .
 
       - name: Set up JDK 17
         uses: actions/setup-java@v5
         with:
           distribution: temurin
-          java-version: "17"
+          java-version: '17'
 
-      - name: Set up Gradle
+      - name: Set up Gradle 8.13
         uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: "8.10.2"
+          gradle-version: '8.13'
 
-      - name: Check Firebase config
-        working-directory: Yug_Policy_Reminder_Firebase
-        run: test -f app/google-services.json
+      - name: Check project files
+        run: |
+          test -f app/build.gradle.kts
+          test -f app/google-services.json
+          test -f settings.gradle.kts
 
       - name: Build APK
-        working-directory: Yug_Policy_Reminder_Firebase
         run: gradle :app:assembleDebug --no-daemon
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: Yug-Policy-Reminder-APK
-          path: Yug_Policy_Reminder_Firebase/app/build/outputs/apk/debug/app-debug.apk
+          path: app/build/outputs/apk/debug/app-debug.apk
