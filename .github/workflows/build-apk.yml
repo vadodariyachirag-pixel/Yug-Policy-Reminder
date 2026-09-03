@@ -15,7 +15,7 @@ jobs:
 
       - name: Extract FIXED project ZIP
         run: |
-          unzip -o Yug_Policy_Reminder_Firebase_SYNC_FIXED_V3.zip -d .
+          unzip -o Yug_Policy_Reminder_Firebase_SYNC_FIXED_V4.zip -d .
 
       - name: Set up JDK 17
         uses: actions/setup-java@v5
